@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const reviewSchema = new Schema({
+const noteschema = new Schema({
     content: String,
     rating: {type: Number, min: 1, max: 5, default: 5},
     user: {type: Schema.Types.ObjectId, ref: 'User'},
@@ -11,7 +11,7 @@ const reviewSchema = new Schema({
     timestamps: true
 });
 
-const movieSchema = new Schema({
+const carschema = new Schema({
     title: {
         type: String,
         required: true
@@ -25,12 +25,12 @@ const movieSchema = new Schema({
     mpaaRating: String,
     cast: [{
         type: Schema.Types.ObjectId,
-        ref: 'Performer'
+        ref: 'Parts'
     }],
     nowShowing: {type: Boolean, default: false},
-    reviews: [reviewSchema]
+    notes: [noteschema]
 }, {
     timestamps: true
 });
 
-module.exports = mongoose.model('Movie', movieSchema);
+module.exports = mongoose.model('car', carschema);

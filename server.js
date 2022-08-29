@@ -11,9 +11,9 @@ require('./config/database');
 require('./config/passport');
 
 var indexRouter = require('./routes/index');
-var moviesRouter = require('./routes/movies');
-var reviewsRouter = require('./routes/reviews');
-var performersRouter = require('./routes/performers');
+var carsRouter = require('./routes/cars');
+var notesRouter = require('./routes/notes');
+var partsRouter = require('./routes/parts');
 
 var app = express();
 
@@ -45,9 +45,9 @@ app.use(function (req, res, next) {
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/movies', moviesRouter);
-app.use('/', reviewsRouter);
-app.use('/', performersRouter);
+app.use('/cars', carsRouter);
+app.use('/', notesRouter);
+app.use('/', partsRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
