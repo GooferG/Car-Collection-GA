@@ -15,6 +15,9 @@ WEBSITE LINK GOES HERE
 [--ERD link--](https://lucid.app/lucidchart/f4a2ad80-3a7e-47e2-8360-e6a64feaa8b2/edit?page=0_0&invitationId=inv_cb3e06cd-374d-4600-9b16-a5fb9b7cb6c7#)
 
 
+[--MVC diagram--](https://docs.google.com/spreadsheets/d/1Disb-pjlrts8C44w-pMgJk9fHMlBiUo4X2yj7ZirvHU/edit?usp=sharing)
+
+
 
 
 
