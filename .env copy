@@ -1,0 +1,5 @@
+DATABASE_URL=mongodb+srv://mongoDBtest:mongo12345@cluster0.21dhgcj.mongodb.net/?retryWrites=true&w=majority
+GOOGLE_CLIENT_ID=814107871877-2ird37h04b081eumevdcbig16d815n5l.apps.googleusercontent.com
+GOOGLE_SECRET=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
+GOOGLE_CALLBACK="http://localhost:3000/oauth2callback"
+SECRET=SEIRocks
