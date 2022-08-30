@@ -1,5 +1,5 @@
 const Car = require('../models/cars');
-const Parts = require('../models/part');
+const Parts = require('../models/parts');
 
 module.exports = {
   index,
@@ -10,7 +10,7 @@ module.exports = {
 
 function index(req, res) {
   Car.find({}, function(err, cars) {
-    res.render('cars/index', { title: 'My Cars', cars });
+    res.render('cars/index', { model: 'My Cars', cars });
   });
 }
 
@@ -22,7 +22,7 @@ function show(req, res) {
         {_id: {$nin: car.cast}},
         function(err, parts) {
             res.render('cars/show',{
-              title : 'Car Details', // this is H1 tag
+              model : 'Car Details', // this is H1 tag
               car, // this will have all the actors
               parts // this will the actors that not in the car
             });
@@ -32,7 +32,7 @@ function show(req, res) {
 }
 
 function newCar(req, res) {
-  res.render('cars/new', { title: 'Add Car' });
+  res.render('cars/new', { model: 'Add Car' });
 }
 
 function create(req, res) {

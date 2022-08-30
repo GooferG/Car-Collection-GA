@@ -22,7 +22,7 @@ WEBSITE LINK GOES HERE
 
 
 
-####Car Collection MAnager 
+####Car Collection Manager 
 
 This program makes managing your car collection a breeze. You can add cars, price, purchase date, notes and more.
 

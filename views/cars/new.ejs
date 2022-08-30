@@ -1,10 +1,16 @@
 <%- include('../partials/header') %>
 
 <form id="new-form" action="/cars" method="POST">
-  <label>Title:</label>
-  <input type="text" name="title">
-  <label>Release Year:</label>
+  <label>Maker:</label>
+  <input type="text" name="maker">
+  <label>Model:</label>
+  <input type="text" name="model">
+  <label>Year:</label>
   <input type="text" name="releaseYear">
+  <label>Purchase Date:</label>
+  <input type="date" name="purchase-date">
+  <br>
+
   <input type="submit" value="Add Car">
   
   

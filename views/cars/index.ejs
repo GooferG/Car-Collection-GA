@@ -2,16 +2,19 @@
 <table id="list">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Release<br>Year</th>
-      <th></th>
+      <th>Maker</th>
+      <th>Model</th>
+      <th>Year</th>
+      <th>Purchase Date</th>
     </tr>
   </thead>
   <tbody>
     <% cars.forEach(function(m) { %>
       <tr>
-        <td><%= m.title %></td>
+        <td><%= m.maker %></td>
+        <td><%= m.model %></td>
         <td><%= m.releaseYear %></td>
+        <td><%= m.purchaseDate %></td>
         <td><a href="/cars/<%= m._id %>">Notes</a></td>
       </tr>
       <% }); %>

@@ -1,4 +1,4 @@
-const Parts = require('../models/part');
+const Parts = require('../models/parts');
 const Car = require('../models/cars');
 
 
@@ -17,13 +17,13 @@ function create(req, res) {
 function newParts(req, res) {
   Parts.find({}, function (err, parts) {
     res.render('parts/new', {
-      title: 'Add Parts', // this is the H1 tag, or the page title 
+      model: 'Add Parts', // this is the H1 tag, or the page title 
       parts
     });
   })
 }
 
-function addToCast(req, res){
+function addtoParts(req, res){
   Car.findById(req.params.id, function(error, car){
     car.cast.push(req.body.partId);
     car.save(function(error){
@@ -36,5 +36,5 @@ function addToCast(req, res){
 module.exports = {
   new: newParts,
   create,
-  addToCast
+  addtoParts
 };
