@@ -15,11 +15,11 @@ function index(req, res) {
 }
 
 function show(req, res) {
-  // Find the cast that belongs to the car
+  // Find the parts that belongs to the car
   Car.findById(req.params.id)
-    .populate('cast').exec(function(err, car) {
+    .populate('parts').exec(function(err, car) {
       Parts.find(
-        {_id: {$nin: car.cast}},
+        {_id: {$nin: car.partList}},
         function(err, parts) {
             res.render('cars/show',{
               model : 'Car Details', // this is H1 tag
@@ -42,8 +42,10 @@ function create(req, res) {
     if (req.body[key] === '') delete req.body[key];
   }
   const car = new Car(req.body);
+  console.log(car)
   car.save(function(err) {
     if (err) return res.redirect('/cars/new');
     res.redirect(`/cars/${car._id}`);
   });
 }
+

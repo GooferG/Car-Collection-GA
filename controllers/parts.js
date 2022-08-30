@@ -25,7 +25,7 @@ function newParts(req, res) {
 
 function addtoParts(req, res){
   Car.findById(req.params.id, function(error, car){
-    car.cast.push(req.body.partId);
+    car.partList.push(req.body.partId);
     car.save(function(error){
       res.redirect(`/cars/${car._id}`);
     });

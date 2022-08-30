@@ -29,10 +29,14 @@ const carsSchema = new Schema({
         return new Date()
         // return new Date(new Date().setFullYear(new Date().getFullYear()))
     }},
-    cast: [{
-        type: Schema.Types.ObjectId,
-        ref: 'Parts'
-    }],
+    purchasePrice:{
+        type: Number,
+        required: true
+    },
+    // partList: [{
+    //     type: Schema.Types.ObjectId,
+    //     ref: 'Parts'
+    // }],
     notes: [notesSchema]
 }, {
     timestamps: true

@@ -7,6 +7,10 @@
     <div><%= car.model %></div>
     <div>Year:</div>
     <div><%= car.releaseYear %></div>
+    <div>Purchase Date:</div>
+    <div><%= car.purchaseDate %></div>
+    <div>Purchase Price:</div>
+    <div><%= car.purchasePrice %></div>
     
     
 </section>
@@ -53,10 +57,7 @@
                 </td>
             </tr>
         <% }); %>
-        <tr>
-            <td colspan="3"></td>
-            <td><strong><%= (total / car.notes.length).toFixed(1) %></strong></td>
-        </tr>
+        
         </tbody>
     </table>
 <% } else { %>

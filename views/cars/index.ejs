@@ -6,6 +6,7 @@
       <th>Model</th>
       <th>Year</th>
       <th>Purchase Date</th>
+      <th>Purchase Price</th>
     </tr>
   </thead>
   <tbody>
@@ -15,6 +16,7 @@
         <td><%= m.model %></td>
         <td><%= m.releaseYear %></td>
         <td><%= m.purchaseDate %></td>
+        <td><%= m.purchasePrice %></td>
         <td><a href="/cars/<%= m._id %>">Notes</a></td>
       </tr>
       <% }); %>
