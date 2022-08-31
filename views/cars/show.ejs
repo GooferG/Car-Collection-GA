@@ -7,21 +7,22 @@
     <div><%= car.model %></div>
     <div>Year:</div>
     <div><%= car.releaseYear %></div>
+    <!-- using momentjs to format date -->
     <div>Purchase Date:</div>
     <div><%= formatDate(car.purchaseDate, 'MMMM Do YYYY')   %></div>
     <div>Purchase Price:</div>
-    <div><%= '$' + car.purchasePrice %></div>
+    <div><%= '$ ' + car.purchasePrice %></div>
     
     
 </section>
 
 
 <br><br>
-<h2>notes</h2>
+<!-- <h2>notes</h2> -->
 
 <% if (user) { %>
     <form id="add-note-form" method="POST" action="/cars/<%= car._id %>/notes">
-        <label>Notes:</label>
+        <!-- <label>Notes:</label> -->
         <textarea name="content"></textarea>
        
         <input type="submit" value="Add Notes">

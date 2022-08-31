@@ -1,69 +1,82 @@
 * {
   box-sizing: border-box;
   font-family: Helvetica;
-  color: #424748;
+  /* color: #424748; */
 }
 
+
+
+tr:nth-child(odd) {
+  background-color: rgb(236, 236, 236);
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  
+  /* color: white; */
+}
 
 tr:nth-child(even) {
   background-color: #D6EEEE;
+  /* color: white;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black; */
+  
 }
 
 body {
-  background-color: #E8ECEB;
-  margin: 0;
+  
+  background: url(/images/garage.jpeg) no-repeat center;
+  background-position: no-repeat; 
+  /* background: url(/images/garage.jpeg) no-repeat scroll left center; */
+  /* background-color: red; */
+  margin: 0 auto;
   height: 100vh;
   display: grid;
   grid-template-rows: 50px 1fr;
-  grid-template-areas: 
+  grid-template-areas:
     "nav"
     "main"
 }
 
-body > nav {
+body>nav {
+  color: red;
   grid-area: nav;
-  background-color: #B8C0C2;
+ 
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding: 0 20px 0 30px;
 }
 
-nav > img {
-  width: 34px;
-  object-fit: contain;
-  margin-right: auto;
-}
 
-body > main {
+
+body>main {
   grid-area: main;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* background: url(images/garage.jpeg) repeat-x top left; */
-  background-image: url('/images/garage.jpg') no-repeat scroll left center;
+  /* background-color: red; */
   /* background-color: #E8ECEB; */
   padding: 20px;
   overflow-y: scroll;
 }
 
-body > main h1:first-child {
+body>main h1:first-child {
   margin-bottom: 50px;
 }
 
-nav > a {
+nav>a {
+  color: white;
+  background-color: black;
   margin: 20px;
   text-decoration: none;
   padding: 10px;
   border-radius: 5px;
 }
 
-nav > a:hover:not(.active) {
+nav>a:hover:not(.active) {
   color: white;
-  background-color: #424748;
+  background-color: black;
 }
 
-nav > a.active {
+nav>a.active {
   color: white;
   cursor: default;
 }
@@ -77,7 +90,10 @@ nav > a.active {
 #new-form *,
 #add-note-form *,
 #add-part-form * {
-  font-size: 20px;
+  color: black;
+  text-shadow: -3px 0 white, 0 3px white, 3px 0 white, 0 -3px white;
+  font-size: 25px;
+  font-weight: 700;
   padding: 5px;
   border-radius: 5px;
 }
@@ -102,7 +118,8 @@ table td {
   text-align: center;
 }
 
-#list td:nth-child(2), #list td:nth-child(3){
+#list td:nth-child(2),
+#list td:nth-child(3) {
   min-width: 100px;
 }
 
@@ -122,10 +139,24 @@ table td {
   display: grid;
   grid-template-columns: auto auto;
   grid-gap: 1rem;
+  color: black;
+  font-size: 20px;
+  font-weight: 700;
+  
+  
 }
 
 #show-page div:nth-child(even) {
   font-weight: bold;
+  background-color: rgb(210, 233, 233);
+  padding: 5px;
+  
+}
+
+#show-page div:nth-child(odd) {
+  font-weight: bold;
+  background-color: rgb(210, 233, 233);
+  padding: 5px;
 }
 
 #add-note-form,
@@ -137,7 +168,7 @@ table td {
 }
 
 #add-note-form input[type="submit"],
-#add-part-form input[type="submit"]  {
+#add-part-form input[type="submit"] {
   width: 10rem;
   grid-column: 2 / 3;
 }
@@ -147,7 +178,7 @@ ul {
   padding: 0;
   list-style: none;
 }
-	
+
 li {
   font-weight: bold;
 }
@@ -173,3 +204,8 @@ li {
   border-radius: 50%;
   height: 40px;
 }
+
+#note-button {
+  color: black;
+}
+

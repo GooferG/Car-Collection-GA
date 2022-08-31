@@ -1,5 +1,6 @@
 <%- include('../partials/header') %>
 <table id="list">
+  
   <thead>
     <tr>
       <th>Maker</th>
@@ -15,9 +16,10 @@
         <td><%= m.maker %></td>
         <td><%= m.model %></td>
         <td><%= m.releaseYear %></td>
+        <!-- using momentjs to format date -->
         <td><%= formatDate(m.purchaseDate, 'MMMM Do YYYY') %></td>
-        <td><%= m.purchasePrice %></td>
-        <td><a href="/cars/<%= m._id %>">Notes</a></td>
+        <td><%= '$ ' + m.purchasePrice %></td>
+        <td><a id="note-button" href="/cars/<%= m._id %>">Notes</a></td>
       </tr>
       <% }); %>
     </tbody>

@@ -6,10 +6,12 @@ const session = require('express-session');
 const passport = require('passport');
 const methodOverride = require('method-override');
 const logger = require('morgan');
+// importing https://momentjs.com to format date
 const moment = require('moment')
 require('dotenv').config(); // for .env file
 require('./config/database');
 require('./config/passport');
+
 
 const indexRouter = require('./routes/index');
 const carsRouter = require('./routes/cars');
