@@ -30,13 +30,13 @@ const carsSchema = new Schema({
         // return new Date(new Date().setFullYear(new Date().getFullYear()))
     }},
     purchasePrice:{
-        type: Number,
+        type: String,
         required: true
     },
-    // partList: [{
-    //     type: Schema.Types.ObjectId,
-    //     ref: 'Parts'
-    // }],
+    partList: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Parts'
+    }],
     notes: [notesSchema]
 }, {
     timestamps: true

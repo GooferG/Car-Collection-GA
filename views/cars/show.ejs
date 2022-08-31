@@ -8,9 +8,9 @@
     <div>Year:</div>
     <div><%= car.releaseYear %></div>
     <div>Purchase Date:</div>
-    <div><%= car.purchaseDate %></div>
+    <div><%= formatDate(car.purchaseDate, 'MMMM Do YYYY')   %></div>
     <div>Purchase Price:</div>
-    <div><%= car.purchasePrice %></div>
+    <div><%= '$' + car.purchasePrice %></div>
     
     
 </section>

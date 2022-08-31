@@ -36,15 +36,16 @@ function newCar(req, res) {
 }
 
 function create(req, res) {
-  // convert nowShowing's checkbox of nothing or "on" to boolean
-  req.body.nowShowing = !!req.body.nowShowing;
+  console.log(req.body)
   for (let key in req.body) {
     if (req.body[key] === '') delete req.body[key];
   }
   const car = new Car(req.body);
   console.log(car)
   car.save(function(err) {
+    console.log(req.body);
     if (err) return res.redirect('/cars/new');
+
     res.redirect(`/cars/${car._id}`);
   });
 }
