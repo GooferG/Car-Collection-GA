@@ -1,0 +1,21 @@
+<%- include('../partials/header') %>
+
+<form id="new-form" action="/cars/<%= car._id %>?_method=PUT" method="POST">
+  <label>Maker :</label>
+  <input type="text" name="maker">
+  <label>Model :</label>
+  <input type="text" name="model">
+  <label>Year :</label>
+  <input type="text" name="releaseYear">
+  <label>Purchase Date :</label>
+  <input type="date" name="purchase-date">
+  <label>Price :</label>
+  <input type="number" name="purchasePrice">
+  <br>
+
+  <input id="new-form" type="submit" value="Update Car">
+  
+  
+</form>
+
+<%- include('../partials/footer') %>

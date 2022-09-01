@@ -12,22 +12,27 @@
     <div><%= formatDate(car.purchaseDate, 'MMMM Do YYYY')   %></div>
     <div>Purchase Price:</div>
     <div><%= '$ ' + car.purchasePrice %></div>
+    <form action="/cars/<%= car._id %>/edit" method="GET">
+        <button id="edit-button" type="submit">Edit</button>
+    </form>
     
     
 </section>
 
 
 <br><br>
-<!-- <h2>notes</h2> -->
+
 
 <% if (user) { %>
     <form id="add-note-form" method="POST" action="/cars/<%= car._id %>/notes">
-        <!-- <label>Notes:</label> -->
+        
         <textarea name="content"></textarea>
-       
         <input type="submit" value="Add Notes">
-    </form>
+       </form>
+       
 <% } %>
+
+
 
 <% if (car.notes.length) { %>
     <table>

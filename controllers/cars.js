@@ -5,8 +5,12 @@ module.exports = {
   index,
   show,
   new: newCar,
-  create
+  create,
+  edit,
+  update
 };
+
+
 
 function index(req, res) {
   Car.find({}, function(err, cars) {
@@ -50,3 +54,25 @@ function create(req, res) {
   });
 }
 
+
+// this function lets user edit schedule
+function edit(req, res) {
+  Car.findOne({_id: req.params.id}, function(err, car) {
+    if (err || !car) return res.redirect('/cars');
+    res.render('cars/edit', {model: 'Edit Car', car});
+  });
+}
+// this function lets user update the edited schedule
+function update(req, res) {
+  Car.findOneAndUpdate(
+    {_id: req.params.id},
+    // update object with updated properties
+    req.body,
+    // options object with new: true to make sure updated doc is returned
+    {new: true},
+    function(err, car) {
+      if (err || !car) return res.redirect('/cars');
+      res.redirect(`/cars/${car._id}`);
+    }
+  );
+}
