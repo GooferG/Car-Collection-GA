@@ -14,23 +14,23 @@ router.get('/auth/google', passport.authenticate(
 ));
 
 
-// // Google call back route
-// router.get('/oauth2callback', passport.authenticate(
-//     'google',
-//     {
-//         successRedirect: '/cars',
-//         failureRedirect: '/cars'
-//     }
-// ));
-
-// Google OAuth callback route
-router.get('/auth/google/oauth2callback', passport.authenticate(
+// Google call back route
+router.get('/oauth2callback', passport.authenticate(
     'google',
     {
-      successRedirect : '/cars',
-      failureRedirect : '/cars'
+        successRedirect: '/',
+        failureRedirect: '/'
     }
 ));
+
+// Google OAuth callback route
+// router.get('/auth/google/oauth2callback', passport.authenticate(
+//     'google',
+//     {
+//       successRedirect : '/cars',
+//       failureRedirect : '/cars'
+//     }
+// ));
 
 // Google logout
 router.get('/logout', function (req, res) {
