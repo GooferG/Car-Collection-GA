@@ -1,5 +1,6 @@
 <%- include('../partials/header') %>
 
+<h1 class="page-title">Update Car</h1>
 <form id="new-form" action="/cars/<%= car._id %>?_method=PUT" method="POST">
   <label>Maker :</label>
   <textarea type="text" name="maker"> <%= car.maker %>  </textarea>

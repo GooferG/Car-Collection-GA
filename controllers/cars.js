@@ -16,6 +16,12 @@ function index(req, res) {
   });
 }
 
+// function index(req, res) {
+//   Car.find({}, function(err, cars) {
+//     res.render('cars/index', { model: 'My Cars', cars });
+//   });
+// }
+
 function show(req, res) {
   // Find the parts that belongs to the car
   Car.findById(req.params.id)
@@ -32,7 +38,7 @@ function show(req, res) {
 }
 
 function newCar(req, res) {
-  res.render('cars/new', { model: 'Add Car' });
+  res.render('cars/new', { model: '' });
 }
 
 function create(req, res) {

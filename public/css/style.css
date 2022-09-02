@@ -4,7 +4,11 @@
   /* color: #424748; */
 }
 
-
+.page-title {
+  color: black;
+  text-shadow: -5px 0 white, 0 5px white, 5px 0 white, 0 -5px white;
+  margin-bottom: 50px;
+}
 
 tr:nth-child(odd) {
   background-color: rgb(236, 236, 236);
