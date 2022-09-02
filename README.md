@@ -32,9 +32,9 @@ This program makes managing your car collection a breeze. You can add cars, pric
 
 
 ![screenShot-1](https://i.imgur.com/ppaY0M6.png)
-![screenShot-1](https://i.imgur.com/ppaY0M6.png)
-![screenShot-1](screenshots/screenShot-3.png)
-![screenShot-1](screenshots/screenShot-4.png)
+![screenShot-1](https://i.imgur.com/1IOnVLP.png)
+![screenShot-1](https://i.imgur.com/KS5d3ku.png)
+![screenShot-1](https://i.imgur.com/NkzPsil.png)
 
  
 
