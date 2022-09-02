@@ -17,11 +17,11 @@ function index(req, res) {
 }
 
 function show(req, res) {
-  // Find the parts that belongs to the car
+ 
   Car.findById(req.params.id, function (err, car) {
     res.render('cars/show', {
       model: '', // this is H1 tag
-      car, // this will have all the actors
+      car, 
     });
   });
 }
@@ -45,14 +45,14 @@ function create(req, res) {
   });
 }
 
-// this function lets user edit schedule
+// this function lets user edit car
 function edit(req, res) {
   Car.findOne({ _id: req.params.id }, function (err, car) {
     if (err || !car) return res.redirect('/cars');
     res.render('cars/edit', { model: '', car });
   });
 }
-// this function lets user update the edited schedule
+// this function lets user update the edited car
 function update(req, res) {
   Car.findOneAndUpdate(
     { _id: req.params.id },
@@ -68,7 +68,7 @@ function update(req, res) {
 }
 
 // function deleteCar(req, res, next) {
-//   // Note the cool "dot" syntax to query on the property of a subdoc
+//  
 //   Car.findOne({ _id: req.params.id }).then(function (car) {
 //     // Remove the note using the remove method of the subdoc
 //     car.remove();
