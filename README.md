@@ -30,7 +30,10 @@ This program makes managing your car collection a breeze. You can add cars, pric
 
 
 
-Next Steps: Share collection with friends and make them jealous.
+Next Steps:
+Share collection with friends and make them jealous.
+Add pictures.
+Sort functionality.
 
 
-Technologies Used: HTML, CSS, JavaScript, Express, MongoDB, Google Oauth, Passport
+Technologies Used: HTML, CSS, JavaScript, Express, MongoDB, Google Oauth, Passport, MomentJS

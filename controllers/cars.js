@@ -16,12 +16,6 @@ function index(req, res) {
   });
 }
 
-// function index(req, res) {
-//   Car.find({}, function(err, cars) {
-//     res.render('cars/index', { model: 'My Cars', cars });
-//   });
-// }
-
 function show(req, res) {
   // Find the parts that belongs to the car
   Car.findById(req.params.id, function (err, car) {
@@ -55,7 +49,7 @@ function create(req, res) {
 function edit(req, res) {
   Car.findOne({ _id: req.params.id }, function (err, car) {
     if (err || !car) return res.redirect('/cars');
-    res.render('cars/edit', { model: 'Edit Car', car });
+    res.render('cars/edit', { model: '', car });
   });
 }
 // this function lets user update the edited schedule
