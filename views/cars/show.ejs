@@ -1,5 +1,6 @@
 <%- include('../partials/header') %>
 
+<h1 class="page-title">Car Details</h1>
 <section id="show-page">
     <div>Maker:</div>
     <div><%= car.maker %></div>
@@ -13,7 +14,7 @@
     <div>Purchase Price:</div>
     <div><%= '$ ' + car.purchasePrice %></div>
     <form action="/cars/<%= car._id %>/edit" method="GET">
-        <button id="edit-button" type="submit">Edit</button>
+        <button id="edit-button" type="submit">Edit Car</button>
     </form>
     
     

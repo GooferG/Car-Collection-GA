@@ -14,9 +14,15 @@ module.exports = {
 
 function index(req, res) {
   Car.find({}, function(err, cars) {
-    res.render('cars/index', { model: 'My Cars', cars });
+    res.render('cars/index', { model: '', cars });
   });
 }
+
+// function index(req, res) {
+//   Car.find({}, function(err, cars) {
+//     res.render('cars/index', { model: 'My Cars', cars });
+//   });
+// }
 
 function show(req, res) {
   // Find the parts that belongs to the car
@@ -26,7 +32,7 @@ function show(req, res) {
         {_id: {$nin: car.partList}},
         function(err, parts) {
             res.render('cars/show',{
-              model : 'Car Details', // this is H1 tag
+              model : '', // this is H1 tag
               car, // this will have all the actors
               parts // this will the actors that not in the car
             });
@@ -36,7 +42,7 @@ function show(req, res) {
 }
 
 function newCar(req, res) {
-  res.render('cars/new', { model: 'Add Car' });
+  res.render('cars/new', { model: '' });
 }
 
 function create(req, res) {
@@ -59,7 +65,7 @@ function create(req, res) {
 function edit(req, res) {
   Car.findOne({_id: req.params.id}, function(err, car) {
     if (err || !car) return res.redirect('/cars');
-    res.render('cars/edit', {model: 'Edit Car', car});
+    res.render('cars/edit', {model: '', car});
   });
 }
 // this function lets user update the edited schedule
