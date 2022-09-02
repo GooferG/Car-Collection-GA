@@ -2,74 +2,64 @@
 
 <h1 class="page-title">Car Details</h1>
 <section id="show-page">
-    <div>Maker:</div>
-    <div><%= car.maker %></div>
-    <div>Model:</div>
-    <div><%= car.model %></div>
-    <div>Year:</div>
-    <div><%= car.releaseYear %></div>
-    <!-- using momentjs to format date -->
-    <div>Purchase Date:</div>
-    <div><%= formatDate(car.purchaseDate, 'MMMM Do YYYY')   %></div>
-    <div>Purchase Price:</div>
-    <div><%= '$ ' + car.purchasePrice %></div>
-    <form action="/cars/<%= car._id %>/edit" method="GET">
-        <button id="edit-button" type="submit">Edit Car</button>
-    </form>
-    
-    
+  <div>Maker:</div>
+  <div><%= car.maker %></div>
+  <div>Model:</div>
+  <div><%= car.model %></div>
+  <div>Year:</div>
+  <div><%= car.releaseYear %></div>
+  <!-- using momentjs to format date -->
+  <div>Purchase Date:</div>
+  <div><%= formatDate(car.purchaseDate, 'MMMM Do YYYY') %></div>
+  <div>Purchase Price:</div>
+  <div><%= '$ ' + car.purchasePrice %></div>
+  <% if (user) { %>
+  <form action="/cars/<%= car._id %>/edit" method="GET">
+    <button id="edit-button" type="submit">Edit Car</button>
+  </form>
+  <% } %>
 </section>
 
-
-<br><br>
-
+<br /><br />
 
 <% if (user) { %>
-    <form id="add-note-form" method="POST" action="/cars/<%= car._id %>/notes">
-        
-        <textarea name="content"></textarea>
-        <input type="submit" value="Add Notes">
-       </form>
-       
-<% } %>
+<form id="add-note-form" method="POST" action="/cars/<%= car._id %>/notes">
+  <textarea name="content"></textarea>
+  <input type="submit" value="Add Notes" />
+</form>
 
+<% } %> <% if (car.notes.length) { %>
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Date</th>
+      <th>Notes</th>
 
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% let total = 0 %> <% car.notes.forEach(function(r) { %>
 
-<% if (car.notes.length) { %>
-    <table>
-        <thead>
-        <tr>
-            <th>User</th>
-            <th>Date</th>
-            <th>Notes</th>
-            
-            <th></th>
-        </tr>
-        </thead>
-        <tbody>
-        <% let total = 0 %>
-        <% car.notes.forEach(function(r) { %>
-            
-            <tr>
-                <td class="note-user"><img src="<%= r.userAvatar %>"><%= r.userName %></td>
-                <td><%= r.createdAt.toLocaleDateString() %></td>
-                <td><%= r.content %></td>
-                
-                <td>
-                    <% if (user && user._id.equals(r.user)) { %>
-                        <form action="/notes/<%= r._id %>?_method=DELETE" method="POST">
-                            <button type="submit">X</button>
-                        </form>
-                    <% } %>
-                </td>
-            </tr>
-        <% }); %>
-        
-        </tbody>
-    </table>
+    <tr>
+      <td class="note-user">
+        <img src="<%= r.userAvatar %>" /><%= r.userName %>
+      </td>
+      <td><%= r.createdAt.toLocaleDateString() %></td>
+      <td><%= r.content %></td>
+
+      <td>
+        <% if (user && user._id.equals(r.user)) { %>
+        <form action="/notes/<%= r._id %>?_method=DELETE" method="POST">
+          <button type="submit">X</button>
+        </form>
+        <% } %>
+      </td>
+    </tr>
+    <% }); %>
+  </tbody>
+</table>
 <% } else { %>
-    <h5>No notes Yet</h5>
-<% } %>
-
-
-<%- include('../partials/footer') %>
+<h5>No notes Yet</h5>
+<% } %> <%- include('../partials/footer') %>

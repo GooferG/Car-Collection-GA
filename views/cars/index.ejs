@@ -1,6 +1,9 @@
-<%- include('../partials/header') %>
+<%- include('../partials/header') %> <% if (!user) { %>
+
+<h1 class="page-title">WELCOME!<br><br>PLEASE LOGIN TO SEE YOUR COLLECTION</h1>
+<% } %> <% if (user) { %>
+
 <table id="list">
-  
   <thead>
     <h1 class="page-title">My Cars</h1>
     <tr>
@@ -13,17 +16,22 @@
   </thead>
   <tbody>
     <% cars.forEach(function(m) { %>
-      <tr>
-        <td><%= m.maker %></td>
-        <td><%= m.model %></td>
-        <td><%= m.releaseYear %></td>
-        <!-- using momentjs to format date -->
-        <td><%= formatDate(m.purchaseDate, 'MMMM Do YYYY') %></td>
-        <td><%= '$ ' + m.purchasePrice %></td>
-        <td><a id="note-button" href="/cars/<%= m._id %>">Notes</a></td>
-      </tr>
-      <% }); %>
-    </tbody>
-  </table>
-  
-<%- include('../partials/footer') %>
+    <tr>
+      <td><%= m.maker %></td>
+      <td><%= m.model %></td>
+      <td><%= m.releaseYear %></td>
+      <!-- using momentjs to format date -->
+      <td><%= formatDate(m.purchaseDate, 'MMMM Do YYYY') %></td>
+      <td><%= '$ ' + m.purchasePrice %></td>
+      <td><a id="note-button" href="/cars/<%= m._id %>">Notes</a></td>
+      <!-- <td>
+        <form action="/cars/<%=m._id%>?_method=DELETE" method="POST">
+          <button type="submit">X</button>
+        </form>
+      </td> -->
+    </tr>
+    <% }); %>
+  </tbody>
+</table>
+
+<% } %> <%- include('../partials/footer') %>

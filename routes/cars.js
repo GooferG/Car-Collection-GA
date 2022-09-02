@@ -9,7 +9,9 @@ router.get('/new', carsCtrl.new);
 router.get('/:id', carsCtrl.show);
 router.post('/', isLoggedIn, carsCtrl.create);
 
-router.get('/:id/edit', carsCtrl.edit)
-router.put('/:id', carsCtrl.update)
+router.get('/:id/edit', carsCtrl.edit);
+router.put('/:id', carsCtrl.update);
+
+// router.delete('/cars/:id/', carsCtrl.deleteCar);
 
 module.exports = router;

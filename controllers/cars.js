@@ -1,5 +1,4 @@
 const Car = require('../models/cars');
-const Parts = require('../models/parts');
 
 module.exports = {
   index,
@@ -8,6 +7,7 @@ module.exports = {
   create,
   edit,
   update,
+  // deleteCar,
 };
 
 function index(req, res) {
@@ -24,17 +24,12 @@ function index(req, res) {
 
 function show(req, res) {
   // Find the parts that belongs to the car
-  Car.findById(req.params.id)
-    .populate('parts')
-    .exec(function (err, car) {
-      Parts.find({ _id: { $nin: car.partList } }, function (err, parts) {
-        res.render('cars/show', {
-          model: 'Car Details', // this is H1 tag
-          car, // this will have all the actors
-          parts, // this will the actors that not in the car
-        });
-      });
+  Car.findById(req.params.id, function (err, car) {
+    res.render('cars/show', {
+      model: '', // this is H1 tag
+      car, // this will have all the actors
     });
+  });
 }
 
 function newCar(req, res) {
@@ -77,3 +72,23 @@ function update(req, res) {
     }
   );
 }
+
+// function deleteCar(req, res, next) {
+//   // Note the cool "dot" syntax to query on the property of a subdoc
+//   Car.findOne({ _id: req.params.id }).then(function (car) {
+//     // Remove the note using the remove method of the subdoc
+//     car.remove();
+//     // Save the updated car
+//     car
+//       .save()
+//       .then(function () {
+//         // Redirect back to the car's show view
+//         res.redirect(`/cars`);
+//       })
+//       .catch(function (err) {
+//         // Let Express display an error
+//         return next(err);
+//         // res.redirect(`/cars/${car._id}`);
+//       });
+//   });
+// }

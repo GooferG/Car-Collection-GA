@@ -3,13 +3,13 @@
 <h1 class="page-title">Update Car</h1>
 <form id="new-form" action="/cars/<%= car._id %>?_method=PUT" method="POST">
   <label>Maker :</label>
-  <textarea type="text" name="maker"> <%= car.maker %>  </textarea>
+  <textarea type="text" name="maker"><%= car.maker %></textarea>
   <label>Model :</label>
-  <textarea type="text" name="model"> <%= car.model %> </textarea>
+  <textarea type="text" name="model"><%= car.model %></textarea>
   <label>Year :</label>
-  <textarea type="text" name="releaseYear"> <%= car.releaseYear %> </textarea>
+  <textarea type="text" name="releaseYear"><%= car.releaseYear %> </textarea>
   <label>Purchase Date :</label>
-  <input type="date" name="purchase-date" />
+  <input type="date" name="purchaseDate" />
   <label>Price :</label>
   <textarea type="number" name="purchasePrice">
 <%= car.purchasePrice %> </textarea
